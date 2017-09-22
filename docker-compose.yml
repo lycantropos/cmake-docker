@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  cmake_docker:
+    build: .
+    image: lycantropos/cmake:3.9.1
+    working_dir: /opt/cmake
+    entrypoint: /opt/cmake/docker-entrypoint.sh
+    volumes:
+      - ./cmake_docker.cpp:/opt/cmake/cmake_docker.cpp
+      - ./CMakeLists.txt:/opt/cmake/CMakeLists.txt
+      - ./docker-entrypoint.sh:/opt/cmake/docker-entrypoint.sh
