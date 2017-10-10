@@ -5,3 +5,12 @@ services:
 
 script:
   - docker-compose up
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker-compose push; fi
+
+env:
+  global:
+    secure: H+X/kqYcLimB1/TbzIF2ve8QYfBsjMVnWCiIvzTTfadVwF/lhQzMk+5O1U0bqC/KeA5r4/hveVaelZ2RJcoSlFrFfdzyQ6PNnfQx4Vi5bseEJ5xZfml/01ZsKi6PpY0XoyxNLgYtYSAuYCZ8m42tuiaWmyCO/j0LxeFVWZs9Zr6qIbJ8bZs59T/DrmGlEJevUS87Slla+r0yaNp0V7bULoic/NHr3DwqPKYr6isGdSzM22WJLcwkARNA/3nuwJ+kg1yk+j1AG/TG7ftAhuTtlm+6sLmiaFyCBCVRNtE52rV/6u12rBqzxKfLkfzBLQwuFAsmVAB/j37/hFQHmzFvcmot5UfQF7VQDxBMvkXoq22QccGPaDcmf6ZuSJgJtYsbQxNqcoGs1Z+cAbT63MJW5iDCzyrkjRE5iR+sjRb9+iAatfFNvs37WDLfZrwiXv3Qv89sOsn9mkVgVE9kPVA281eoGLa0UzWxMi2gEJMYK4IM3TCxdOF5yy7JBlvArLKTMpRlPlLJnwtQSU7ZWbSIq/PNGZRdp15cmU7bc9TJdI58JMWmqQ6PdAbVw+9SrM93yRSNQlJ4wGJw/InovumZN3mVAMjSQtilE6otCGhbcZoRMEuVXE7r8CzW5PjwIlJBfUQqMWVs8bv5S4bUma4gtUofqVmaPl2QeljPolOo6OY=
