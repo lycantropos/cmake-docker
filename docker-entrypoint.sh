@@ -3,6 +3,8 @@
 set -ex
 
 cmake --version
-cmake -G "CodeBlocks - Unix Makefiles" .
-cmake --build . --target all -- -j 2
+mkdir build
+cd build
+cmake ..
+make -j4
 ./cmake_docker
