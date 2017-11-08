@@ -2,6 +2,6 @@
 
 
 int main() {
-  std::cout << "Successfully installed CMake 3.9.1" << std::endl;
+  std::cout << "Successfully installed CMake 3.9.2" << std::endl;
   return 0;
 }
