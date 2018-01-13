@@ -9,7 +9,7 @@ RUN wget https://cmake.org/files/v3.9/cmake-3.9.5.tar.gz && \
 WORKDIR cmake-3.9.5
 RUN ./bootstrap > /dev/null && \
     make -j$(nproc --all) > /dev/null && \
-    make install
+    make install > /dev/null
 
 WORKDIR /
 RUN rm -rf /tmp/cmake
