@@ -6,5 +6,5 @@ cmake --version
 mkdir build
 cd build
 cmake ..
-make -j4
+make -j$(nproc --all)
 ./cmake_docker
