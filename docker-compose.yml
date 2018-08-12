@@ -3,7 +3,7 @@ version: '3'
 services:
   cmake_docker:
     build: .
-    image: lycantropos/cmake:3.9.5
+    image: lycantropos/cmake:3.9.6
     working_dir: /opt/cmake
     entrypoint: /opt/cmake/docker-entrypoint.sh
     volumes:
